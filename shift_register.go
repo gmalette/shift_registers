@@ -35,8 +35,9 @@ func (s *shiftRegister) Write(data []bool) {
 	if missingLen < 0 {
 		missingLen = 0
 	}
-	actualData := append(make([]bool, missingLen, missingLen), data...)
-	actualData = actualData[(len(actualData) - s.lineSize):]
+
+	actualData := append(data, make([]bool, missingLen, missingLen)...)
+	actualData = actualData[:s.lineSize]
 
 	for index := range actualData {
 		pin := actualData[len(actualData)-index-1]

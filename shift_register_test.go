@@ -101,7 +101,7 @@ func TestShiftRegisterWriteFillsData(t *testing.T) {
 	register := initShiftRegister()
 	register.Write([]bool{true, false})
 
-	if !reflect.DeepEqual(datum, []byte{0, 0, 1, 0}) {
+	if !reflect.DeepEqual(datum, []byte{1, 0, 0, 0}) {
 		t.Errorf("Bytes were not written properly, was %+v", datum)
 	}
 }
@@ -110,7 +110,7 @@ func TestShiftRegisterWriteTruncatesData(t *testing.T) {
 	register := initShiftRegister()
 	register.Write([]bool{true, false, false, false, true, false})
 
-	if !reflect.DeepEqual(datum, []byte{0, 0, 1, 0}) {
+	if !reflect.DeepEqual(datum, []byte{1, 0, 0, 0}) {
 		t.Errorf("Bytes were not written properly, was %+v", datum)
 	}
 }
