@@ -1,6 +1,6 @@
 # shift_registers
 
-Eases the use of Shift Registers. Can simulate any length of register
+Golang library to use shift registers on the RaspberryPi or other gobots. Can simulate any length of register.
 
 ## Usage
 
